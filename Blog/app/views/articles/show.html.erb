@@ -1,3 +1,8 @@
 <h1> <%= @article.title %></h1>
 <p> <%= @article.body %></p>
 <a href="/"> Back</a>
+<%= link_to 'Edit', edit_article_url%>
+<%= link_to 'Delete', article_path(@article), data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are You Sure for deleting this post?"
+}%>

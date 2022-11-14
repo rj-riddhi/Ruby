@@ -1,0 +1,31 @@
+<h1>Article Form</h1>
+<%# <form action="/articles" method="post">
+<label for="title">Titlee</label>
+<input type="text" id="title" name="" placeholder="Enter Title" />
+<textarea placeholder="Blog Description"></textarea> 
+<button type="submit">Submit</button>
+</form> %>
+
+
+<%= form_with model: article do |form| %>
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+    <%# for showing errors %>
+    <% article.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %><br>
+    <% article.errors.full_messages_for(:body).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
