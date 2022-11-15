@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get 'home/index'
+  
+  resources :user_lists
+  
   devise_for :users
   # resources :friends
   get 'home/index'

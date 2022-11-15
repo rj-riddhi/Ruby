@@ -1,0 +1,42 @@
+<%= form_with(model: user_list) do |form| %>
+  <% if user_list.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(user_list.errors.count, "error") %> prohibited this user_list from being saved:</h2>
+
+      <ul>
+        <% user_list.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :first_name, style: "display: block" %>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div>
+    <%= form.label :last_name, style: "display: block" %>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <div>
+    <%= form.label :email, style: "display: block" %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div>
+    <%= form.label :phone, style: "display: block" %>
+    <%= form.text_field :phone %>
+  </div>
+
+  <div>
+    <%= form.label :insta_id, style: "display: block" %>
+    <%= form.text_field :insta_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
