@@ -24,7 +24,15 @@
       <div><%= message %></div>
     <% end %>
   </div>
+ 
+ <br/>
 
+  <div>
+  <%= form.label :status %> : 
+  <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
+</div>
+
+<br />
   <div>
     <%= form.submit %>
   </div>

@@ -1,7 +1,12 @@
 <h1>Articles</h1>
+
+<p>Our site has <%= Article.public_content %> Blogs</p>
 <ul>
 <% @articles.each do |article| %>
+<% unless article.archived? %>
 <li><%= link_to article.title, article %></li>
+
+<% end %>
 <% end %>
 </ul>
 
