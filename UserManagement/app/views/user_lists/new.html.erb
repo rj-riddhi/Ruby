@@ -1,9 +1,7 @@
 <h1>Add New User</h1>
-
+<br/>
 <%= render "form", user_list: @user_list %>
 
-<br>
-
 <div>
-  <%= link_to "Back to user lists", user_lists_path %>
+  <%= link_to "Back", user_lists_path, class:'btn btn-dark' %>
 </div>

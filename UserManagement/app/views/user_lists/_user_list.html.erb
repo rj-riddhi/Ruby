@@ -1,27 +1,18 @@
-<div id="<%= dom_id user_list %>">
-  <p>
-    <strong>First name:</strong>
-    <%= user_list.first_name %>
-  </p>
 
-  <p>
-    <strong>Last name:</strong>
-    <%= user_list.last_name %>
-  </p>
-
-  <p>
-    <strong>Email:</strong>
-    <%= user_list.email %>
-  </p>
-
-  <p>
-    <strong>Phone:</strong>
-    <%= user_list.phone %>
-  </p>
-
-  <p>
-    <strong>Insta:</strong>
-    <%= user_list.insta_id %>
-  </p>
-
-</div>
+<tr  id="<%= dom_id user_list %>">
+  <td><%= user_list.first_name %></td>
+  <td><%= user_list.last_name %></td>
+  <td><%= user_list.email %></td>
+  <td><%= user_list.phone %></td>
+  <td><%= user_list.insta_id %></td>
+  <td>
+  
+  <%= link_to "Show", user_list, class:'btn btn-link' %>
+  </td>
+  <td>
+  <%= link_to "Edit", edit_user_list_path(user_list), class:'btn btn-link' %>
+  </td>
+  <td>
+  <%= link_to "Destroy", user_list_path(user_list), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} ,class:'btn btn-link'%>
+  </td>
+</tr>

@@ -10,33 +10,28 @@
       </ul>
     </div>
   <% end %>
-
-  <div>
-    <%= form.label :first_name, style: "display: block" %>
-    <%= form.text_field :first_name %>
+  <div class="mb-3">
+    <%= form.text_field :first_name, class:"form-control", placeholder:'First Name'  %>
   </div>
 
-  <div>
-    <%= form.label :last_name, style: "display: block" %>
-    <%= form.text_field :last_name %>
+  <div class="mb-3">
+    <%= form.text_field :last_name, class:"form-control", placeholder:'Last Name' %>
   </div>
 
-  <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
+  <div class="mb-3">
+    <%= form.text_field :email, class:"form-control", placeholder:'Email' %>
   </div>
 
-  <div>
-    <%= form.label :phone, style: "display: block" %>
-    <%= form.text_field :phone %>
+  <div class="mb-3">
+    <%= form.text_field :phone, class:"form-control", placeholder:'Phone NUmber' %>
   </div>
 
-  <div>
-    <%= form.label :insta_id, style: "display: block" %>
-    <%= form.text_field :insta_id %>
+  <div class="mb-3">
+    <%= form.text_field :insta_id, class:"form-control", placeholder:'Insta Id' %>
   </div>
+<br/>
 
-  <div>
-    <%= form.submit %>
+  <div class="mb-3">
+    <%= form.submit !params[:id] ? 'Create User' : 'Update User', class:'btn btn-secondary' %>
   </div>
 <% end %>

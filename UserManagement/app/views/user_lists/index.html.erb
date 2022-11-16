@@ -1,14 +1,22 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>User lists</h1>
 
 <div id="user_lists">
+<table class="table table-striped table-bordered table-hover">
+<thead class="table-dark">
+<tr>
+<th>First name</th>
+<th>Last name</th>
+<th>Email</th>
+<th>Phone</th>
+<th>Insta Id</th>
+<th colspan='3'>Actions</th>
+</tr>
+</thead>
+<tbody>
   <% @user_lists.each do |user_list| %>
     <%= render user_list %>
-    <p>
-      <%= link_to "Show this user list", user_list %>
-    </p>
   <% end %>
+  </tbody>
+</table>
 </div>
 
-<%= link_to "New user list", new_user_list_path %>
+<%= link_to "New User", new_user_list_path, class:"btn btn-secondary" %>
