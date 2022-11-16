@@ -3,5 +3,6 @@ class HomeController < ApplicationController
   end
 
   def about
+    @user_lists = UserList.all
   end
 end

@@ -1,6 +1,7 @@
 class UserListsController < ApplicationController
   before_action :set_user_list, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :correct_user, only: [:edit, :update, :destroy]
   # GET /user_lists or /user_lists.json
   def index
     @user_lists = UserList.all
@@ -57,6 +58,11 @@ class UserListsController < ApplicationController
     end
   end
 
+  def correct_user
+    @friend = current_user.user_lists.find_by(id: params[:id])
+    redirect_to user_list_path, notice: "Not Autherized to edit this user" if @friend.nil?
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user_list
@@ -65,6 +71,6 @@ class UserListsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_list_params
-      params.require(:user_list).permit(:first_name, :last_name, :email, :phone, :insta_id)
+      params.require(:user_list).permit(:first_name, :last_name, :email, :phone, :insta_id, :user_id)
     end
 end

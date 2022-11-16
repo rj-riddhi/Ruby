@@ -29,6 +29,10 @@
   <div class="mb-3">
     <%= form.text_field :insta_id, class:"form-control", placeholder:'Insta Id' %>
   </div>
+
+  <div class="mb-3">
+    <%= form.number_field :user_id, id: :user_list_id,  class:"form-control", value:current_user.id, hidden:'true' %>
+  </div>
 <br/>
 
   <div class="mb-3">

@@ -1,1 +1,33 @@
 <h1>About Us</h1>
+
+
+
+<div id="user_lists">
+<table class="table table-striped table-bordered table-hover">
+<thead class="table-dark">
+<tr>
+<th>First name</th>
+<th>Last name</th>
+<th>Email</th>
+<th>Phone</th>
+<th>Insta Id</th>
+<th>User Id</th>
+</tr>
+</thead>
+<tbody>
+  <% @user_lists.each do |user_list| %>
+   <tr  id="<%= dom_id user_list %>">
+  <td><%= user_list.first_name %></td>
+  <td><%= user_list.last_name %></td>
+  <td><%= user_list.email %></td>
+  <td><%= user_list.phone %></td>
+  <td><%= user_list.insta_id %></td>
+  <td><%= user_list.user_id %></td>
+</tr>
+
+  <% end %>
+  </tbody>
+</table>
+</div>
+
+<%= link_to "New User", new_user_list_path, class:"btn btn-secondary" %>
