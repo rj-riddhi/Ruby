@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-  
   resources :user_lists
   
-  devise_for :users
   # resources :friends
   get 'home/index'
   root 'home#index'
