@@ -14,11 +14,11 @@
         <%= link_to 'All Users',home_about_path, class: 'nav-link' %>
         </li>
         
+        <% if user_signed_in? %>
+
         <li class="nav-item">
         <%= link_to 'My Users',user_lists_path, class: 'nav-link' %>
         </li>
-        
-        <% if user_signed_in? %>
 
         <li class="nav-item">
         <%= link_to 'Add User',new_user_list_path, class: 'nav-link' %>

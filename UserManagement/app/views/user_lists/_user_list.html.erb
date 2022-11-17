@@ -9,13 +9,13 @@
   <td><%= user_list.user_id %></td>
   <td>
   
-  <%= link_to "Show", user_list, class:'btn btn-link' %>
+  <%= link_to "Show", user_list, class:'btn btn-sm btn-outline-info' %>
   </td>
   <td>
-  <%= link_to "Edit", edit_user_list_path(user_list), class:'btn btn-link' %>
+  <%= link_to "Edit", edit_user_list_path(user_list), class:'btn btn-sm btn-outline-secondary' %>
   </td>
   <td>
-  <%= link_to "Destroy", user_list_path(user_list), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} ,class:'btn btn-link'%>
+  <%= link_to "Destroy", user_list_path(user_list), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} ,class:'btn btn-sm btn-outline-danger'%>
   </td>
 </tr>
 <% end %>
