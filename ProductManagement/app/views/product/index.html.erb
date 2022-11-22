@@ -1,0 +1,15 @@
+
+ <%  @products.each do |product| %>
+<div class='cards'>
+        <div class = 'card'>
+            <img class = 'card_img' src = "<%= product.avatar.url %>" alt = 'Chhalang'/>
+            <div class = 'card_info'>
+                <h3 class = 'card_cat'> <%= product.name %> </h3>
+                <p class = 'card_title'> <%= product.description %> </p>
+                <%# <a href = {props.link} target = '_blank' rel='noreferrer'>
+                    <button>Watch Now</button>
+                </a> %>
+            </div>
+        </div>
+      </div>
+<% end %>
