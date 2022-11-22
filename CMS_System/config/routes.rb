@@ -5,6 +5,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "pages#home"
-  resources :cms_pages, only: [:page]
+  resources :cms_pages
   get ":slug", :to => 'pages#home', :via => [:get, :post]
 end
