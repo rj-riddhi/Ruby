@@ -1,0 +1,16 @@
+
+<div class="wrapper d-flex align-items-center justify-content-center">
+        <div class="card">
+            <div class="img-container position-relative w-100 h-100">
+                <img src="<%= @product.avatar.url %>" alt="">
+                <img src="<%= @product.avatar.url %>" alt="">
+            </div>
+            <div class="box w-100 h-100 position-absolute d-flex align-items-center justify-content-center">
+                <div class="inner-content d-flex flex-column align-content-center justify-content-center">
+                    <div class="h2 m-0 text-center"><%= @product.name %></div>
+                    <div class="tag text-center">Deatils of Product <span class="fas fa-heart text-danger"></span></div>
+                    <p class="px-3 mt-3 text-center"><%= @product.description %></p>
+                </div>
+            </div>
+        </div>
+    </div>
