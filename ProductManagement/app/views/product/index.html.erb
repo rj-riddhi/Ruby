@@ -1,5 +1,6 @@
 
  <%  @products.each do |product| %>
+ <%if(product.active?) %>
 <div class='cards'>
         <div class = 'card  radius-15'>
         <div class="d-flex justify-content-center card_img">
@@ -10,5 +11,6 @@
                 <p class = 'card_title'> <%= product.description %> </p>
             </div>
         </div>
-      </div>
+</div>
+<% end %>
 <% end %>

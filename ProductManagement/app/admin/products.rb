@@ -1,6 +1,6 @@
 ActiveAdmin.register Product do
 
-   permit_params :name, :description, :avatar
+   permit_params :name, :description, :avatar, :status
   #
   # or
   #
@@ -14,6 +14,7 @@ ActiveAdmin.register Product do
       f.input :name
       f.input :description
       f.input :avatar, as: :file
+      f.input :status
     end
     f.actions
   end
