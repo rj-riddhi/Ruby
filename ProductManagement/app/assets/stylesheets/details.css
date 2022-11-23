@@ -12,10 +12,6 @@ body{
     background-color: #fff;
 }
 
-.wrapper{
-    /* width: 100vw; */
-    /* height: 100vh; */
-}
 .wrapper .card{
     width: 400px;
     height: 400px;
