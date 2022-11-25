@@ -1,0 +1,89 @@
+<div class="card">
+  <div class="card-header">
+   <h2>Edit Profile</h2>
+  </div>
+  <div class="card-body">
+
+  <div class="d-flex flex-column align-items-center text-center p-3 py-2">
+        <img id="blah" class="rounded-circle" width="150px" src="<%= current_user.image.url %>">
+        <span class="font-weight-bold"><%= current_user.name %></span>
+        <span class="text-black-50"><%= current_user.email%></span>
+  </div>
+  <% if resource.errors.any? %>
+      <% resource.errors.full_messages.each do |message| %>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert" id="alert">
+<%= message %>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+      <% end %>
+<% end %>
+
+           
+      <%= form_for(resource, as: resource_name,data: { turbo: false },  url: registration_path(resource_name), html: { method: :put }) do |f| %>
+
+     <div class="field mb-3 mt-5">
+    <%= f.text_field :name, required: true, autofocus: true, class:"form-control", placeholder:"Full Name" %>
+  </div>
+
+          <div class="field mb-3">
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder:"Email" %>
+          </div>
+
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+          <div class="field  mb-3">
+    <%= f.password_field :password, autocomplete: "new-password", class:"form-control", hint: "leave it blank if you don't want to change it", placeholder:"Password" %>
+  </div>
+
+          <div class="field  mb-3">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control", placeholder:"Retype Password"  %>
+  </div>
+
+          <div class="field  mb-3">
+    <%= f.password_field :current_password, autocomplete: "current-password",class:"form-control", placeholder:"Current Password"  %>
+  </div>
+
+  <div class="field mb-3">
+    <%= f.file_field :image, class:"form-control", onchange: "readURL(this);" %>
+  </div>
+
+        <%= f.submit "Update", class:"btn btn-secondary" %>
+
+      <% end %>
+  </div>
+</div>
+
+<br/>
+
+<div class="card">
+  <div class="card-header">
+    <h4>Cancel my account</h4>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Unhappy? </h5>
+    <p class="card-text">
+      <%= link_to "Cancel my account", registration_path(resource_name),  data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class:'btn btn-danger' %>
+    </p>
+  </div>
+</div>
+
+<br/>
+
+
+<%= link_to "Back", :back, class:'btn btn-secondary' %>
+<script>
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#blah')
+                .attr('src', e.target.result);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+</script>
