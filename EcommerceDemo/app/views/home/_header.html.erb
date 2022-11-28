@@ -14,16 +14,7 @@
         <%= link_to 'All Users',home_about_path, class: 'nav-link' %>
         <%# </li> %>
         
-           <%# <% if total_cart_items %>
-              <%# <%= link_to cart_path(@cart), class:"nav-link btn btn-danger" do %> 
-              <%# <span class="icon is-small">
-                <i class="fa fa-shopping-cart"></i>
-              </span>
-              <span>Cart %>
-                <%# <%= cart_count_over_one %> 
-                <%# </span> %>
-              <%# <% end %> 
-            <%# <% end %>
+         
 
         <% if user_signed_in? %>
 
@@ -53,6 +44,18 @@
         </li>
 
         <% end %>
+          <% if cart_has_items %>
+         <li class="nav-item">
+              <%= link_to cart_path(@cart), class:"nav-link"  do %> 
+              <span class="icon is-small">
+                <i class="fa fa-shopping-cart"></i>
+              </span>
+             <span>
+                <%= cart_count_over_one  %>
+                </span>
+               <% end %>
+               </li>
+            <% end %>
       </ul>
     </div>
   </div>

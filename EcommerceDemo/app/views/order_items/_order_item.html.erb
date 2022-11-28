@@ -1,0 +1,14 @@
+
+                <tr>
+                  <th scope="row" class="border-0">
+                    <div class="p-2 m-2">
+                      <img src="<%= order_item.product.image_url(:thumb) %>" alt="" width="120" class="img-fluid rounded shadow-sm m-3">
+                      <div class="ml-3 d-inline-block align-middle">
+                        <h5 class="mb-0"> <%= link_to order_item.product.name, product_path(order_item.product.id), class: "text-dark d-inline-block align-middle"  %></h5><span class="text-muted font-weight-normal font-italic d-block"><%= truncate(order_item.product.description, length: 140) %></span>
+                      </div>
+                    </div>
+                  </th>
+                  <td class="border-0 align-middle"><strong><%= number_to_currency(order_item.total_price) %></strong></td>
+                  <td class="border-0 align-middle"><strong><%= order_item.quantity %></strong></td>
+                  <td class="border-0 align-middle"><%= link_to "Remove Item",  order_item, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} ,class:'btn  btn-outline-danger'%></td>
+                </tr>

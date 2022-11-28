@@ -78,13 +78,6 @@ end
       @product = Product.find(params[:id])
     end
 
-  #   # Only allow a list of trusted parameters through.
-  #   def user_list_params
-  #     params.require(:user_list).permit(:first_name, :last_name, :email, :phone, :insta_id, :user_id)
-  #   end
-
-  private
-
     def product_params
       params.require(:product).permit(:name, :description, :condition, :price, :image)
     end
