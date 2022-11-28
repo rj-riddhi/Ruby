@@ -1,0 +1,62 @@
+<% if notice%>
+  <div class="alert alert-warning alert-dismissible fade show" role="alert" id="alert">
+    <%= notice %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% end %>
+<h1>Products</h1>
+<div class="wrapper">
+  <div class="container">
+    <div class="row g-1">
+    <%  @products.each do |product| %>
+      <div class="col-md-3">
+        <div class="card p-3 m-3">
+          <div class="text-center">
+              <%= link_to image_tag(product.image.url, :width => "200", :height => "200"), product_path(product.id) %>
+          </div>
+          <div class="product-details mt-2">
+            <p class="d-block price"><%= number_to_currency(product.price) %></p>
+            <p><%= product.name %></p>
+            <% if(current_user.id !=  product.user_id) %>
+            <div class="buttons d-flex flex-row">
+              <div class="cart"><i class="fa fa-shopping-cart"></i></div>
+              <button class="btn btn-success cart-button btn-block"><span class="dot">1</span>Add to cart </button>
+            </div>
+            <div class="weight">
+              <small>1 Item</small>
+            </div>
+            <% else %>
+             <div class="buttons d-flex flex-row justify-content-around">
+                    <%= link_to 'Edit', edit_product_url(product), class: "btn btn-outline-secondary" %>
+                    <%= link_to "Delete", product, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} ,class:'btn  btn-outline-danger'%>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+
+
+  const cartButtons = document.querySelectorAll('.cart-button');
+
+  cartButtons.forEach(button => {
+
+  button.addEventListener('click',cartClick);
+
+  });
+
+  function cartClick(){
+  let button =this;
+  button.classList.add('clicked');
+  }
+
+
+
+  });
+</script>
+

@@ -1,0 +1,39 @@
+<div class="h-100 p-5 bg-white border rounded-3 row">
+    <div class="col">
+      <p>
+        <img src="<%= product.image.url%>"/>
+      </p>
+    </div>
+    <div class="col">
+              <h2>
+              <%= @product.name %>
+              </h2>
+              <br /><br />
+              <p>
+                <strong>Description: </strong>
+                <%= product.description %>
+              </p>
+
+              <p>
+                <strong>Condition: </strong>
+                <%= product.condition %>
+              </p>
+
+              <p>
+                <strong>Price: </strong>
+                <%= number_to_currency(product.price) %>
+              </p>
+              <p>  <strong>Sold By: </strong> <%= @product.user.name %></p>
+
+            
+              <br/><br/>
+      <% if(current_user.id ==  @product.user_id) %>
+              <%= link_to "Edit", edit_product_path(@product),  class:"btn btn-secondary" %>
+              <% else %>
+               <%= link_to 'Add to cart', line_items_path(product_id: @product), class: 'btn btn-secondary' %>
+      <% end %>
+              <%= link_to "Back", products_path,  class:"btn btn-dark" %>
+              <%# <%= link_to "Destroy", @product, method: :delete,  class:"btn btn-danger" %> 
+               
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<%= form_for @product, html: { multipart: true } do |f| %>
+  <% if @product.errors.any? %>
+    <% @product.errors.full_messages.each do |message| %>
+      <div class="alert alert-warning alert-dismissible fade show" role="alert" id="alert">
+        <%= message %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    <% end %>
+  <% end %>
+  <div class="field mb-3">
+    <%= f.text_field :name, required: true, autofocus: true, class:"form-control", placeholder:"Product Name" %>
+  </div>
+  <div class="field  mb-3">
+    <%= f.number_field :price, required: true, class:"form-control", maxlength: 7 %>
+  </div>
+  <div class="field mb-3">
+    <%= f.text_area :description, required: true, class:"form-control", placeholder:"Product Description" %>
+  </div>
+  <div class="field mb-3 form-control">
+    <%= f.select :condition, collection: Product::CONDITION %>
+  </div>
+  <div class="field mb-3">
+    <%= f.file_field :image, class:"form-control" %>
+  </div>
+  <output id="list"></output>
+  <div class="mb-3 field">
+    <%= f.button :submit, class: 'btn btn-secondary'   %>
+    <%= link_to 'Cancel', products_path, class:'btn btn-dark' %>
+  </div>
+<% end %>

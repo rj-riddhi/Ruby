@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
    
-   <%= link_to 'UserManagement',root_path, class: 'navbar-brand' %>
+   <%= link_to 'Ecommerce',root_path, class: 'navbar-brand' %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -14,15 +14,26 @@
         <%= link_to 'All Users',home_about_path, class: 'nav-link' %>
         <%# </li> %>
         
+           <%# <% if total_cart_items %>
+              <%# <%= link_to cart_path(@cart), class:"nav-link btn btn-danger" do %> 
+              <%# <span class="icon is-small">
+                <i class="fa fa-shopping-cart"></i>
+              </span>
+              <span>Cart %>
+                <%# <%= cart_count_over_one %> 
+                <%# </span> %>
+              <%# <% end %> 
+            <%# <% end %>
+
         <% if user_signed_in? %>
 
-        <%# <li class="nav-item">
-        <%= link_to 'My Users',user_lists_path, class: 'nav-link' %>
-        <%# </li> %>
+        <li class="nav-item">
+        <%= link_to 'Products',products_path, class: 'nav-link' %>
+        </li>
 
-        <%# <li class="nav-item">
-        <%= link_to 'Add User',new_user_list_path, class: 'nav-link' %>
-        <%# </li> %>
+        <li class="nav-item">
+        <%= link_to 'Add Product',new_product_path, class: 'nav-link' %>
+        </li>
 
         <li class="nav-item">
         <%= link_to 'Sign Out',destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: 'nav-link' %>
