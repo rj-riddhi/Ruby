@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations',
+    passwords: 'users/passwords'
+  }
+  get 'welcome/index'
+  resources :tv_shows do
+    member do
+      post :add_to_favorites
+      delete :remove_from_favorites
+    end
+  end
+  root to: 'welcome#index'
 end

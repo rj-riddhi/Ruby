@@ -1,0 +1,12 @@
+<h1>Welcome to FavShow</h1>
+	<p>Your favorite TV Show reminder.</p>
+	<% if user_signed_in? %>
+	  <p>
+	    <%= link_to 'Click here', tv_shows_path %> to get a list of all shows.
+	  </p>
+	<% else %>
+	  <p>
+	    Sign up/Login to add a show as favorite and get notification when the show is about to begin.
+        <%= link_to 'Login/Signup', new_user_registration_path %> to get a list of all shows
+	  </p>
+	<% end %>

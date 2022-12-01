@@ -12,6 +12,11 @@ gem "sprockets-rails"
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 
+gem 'will_paginate', '~> 3.3'
+gem 'bootstrap', '~> 4.5.0'
+gem 'jquery-rails'
+gem 'devise'
+gem 'acts_as_favoritor'
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 

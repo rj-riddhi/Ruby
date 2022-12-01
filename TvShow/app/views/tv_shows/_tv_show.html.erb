@@ -1,0 +1,12 @@
+<tr>
+  <td><%= tv_show.name %></td>
+  <td><%= tv_show&.channel&.name %></td>
+  <td><%= tv_show.start_time.strftime("%I:%M %p") + ' - ' + tv_show.end_time.strftime("%I:%M %p") %></td>
+  <td>
+    <% if user_signed_in? && current_user.favorited?(tv_show) %>
+      <%= link_to 'Remove from favorites', remove_from_favorites_tv_show_path(tv_show), method: :delete, class: 'btn btn-danger btn-sm' %>
+    <% else %>
+      <%= link_to 'Add to favorites', add_to_favorites_tv_show_path(tv_show), method: :post, class: 'btn btn-primary btn-sm' %>
+    <% end %>
+  </td>
+</tr>
