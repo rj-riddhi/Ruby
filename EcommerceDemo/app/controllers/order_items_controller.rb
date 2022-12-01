@@ -21,7 +21,7 @@ class OrderItemsController < InheritedResources::Base
 
     product = Product.find(params[:product_id])
     @order_item = @cart.set_product(product)
-
+    # @order_item = @cart.set_user(current_user)
     respond_to do |format|
       if @order_item.save
         format.html { redirect_to @order_item.cart, notice: "Item added to cart." }

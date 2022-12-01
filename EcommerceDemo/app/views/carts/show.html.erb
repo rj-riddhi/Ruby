@@ -23,9 +23,11 @@
                   <th scope="col" class="border-0 bg-light">
                     <div class="py-2 text-uppercase">Quantity</div>
                   </th>
+                  <% if(@cart.status == 0) %>
                   <th scope="col" class="border-0 bg-light">
                     <div class="py-2 text-uppercase">Remove</div>
                   </th>
+                  <% end %>
                 </tr>
               </thead>
               <tbody>
@@ -44,9 +46,7 @@
 							<h4 class="text-right">Total <strong><%= number_to_currency(@cart.total_price) %></strong></h4>
 						</div>
 						<div class="col-xs-3 d-flex justify-content-center">
-							<button type="button" class="btn btn-outline-success" style="margin-right: 15px">
-								Checkout
-							</button>
+            <%= button_to "Checkout", change_status_cart_path(@cart, {:status => 1}), method: :patch,  class: "btn btn-outline-success", style: "margin-right: 15px"%>
               <%= button_to 'Empty Cart', @cart, method: :delete, data: { confirm: "Are you sure? " }, class: "btn btn-outline-danger" %>
 						</div>
 					</div>

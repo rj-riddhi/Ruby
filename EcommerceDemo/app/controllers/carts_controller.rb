@@ -2,6 +2,7 @@ class CartsController < InheritedResources::Base
 
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
   before_action :set_cart, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
   layout 'index', only: [:index, :show]
   # GET /user_lists or /user_lists.json
   def index
@@ -48,6 +49,15 @@ end
         format.json { render json: @cart.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def change_status
+    
+    @cart = Cart.find(params[:id])
+    @order_item = @cart.order_items
+    @cart.update(:status => 1)
+    @cart.order_items.update(:status => 1)
+    redirect_to @cart, notice: "Your Payment has been done successfully 🥳"
   end
 
   # DELETE /user_lists/1 or /user_lists/1.json

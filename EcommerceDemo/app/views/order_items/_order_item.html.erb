@@ -10,5 +10,7 @@
                   </th>
                   <td class="border-0 align-middle"><strong><%= number_to_currency(order_item.total_price) %></strong></td>
                   <td class="border-0 align-middle"><strong><%= order_item.quantity %></strong></td>
+                  <% if(order_item.status == 0) %>
                   <td class="border-0 align-middle"><%= link_to "Remove Item",  order_item, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} ,class:'btn  btn-outline-danger'%></td>
+                  <% end %>
                 </tr>

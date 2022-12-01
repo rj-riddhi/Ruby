@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   resources :order_items
-  resources :carts
+  resources :carts do
+  member do
+    patch :change_status
+  end
+end
   resources :products
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

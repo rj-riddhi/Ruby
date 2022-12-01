@@ -11,6 +11,11 @@ class Cart < ApplicationRecord
         current_item
     end
 
+    def set_user(user)
+        user_id = user.id
+        user_id
+    end
+
     def total_price
         order_items.to_a.sum {|item| item.total_price }
     end

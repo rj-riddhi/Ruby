@@ -10,7 +10,10 @@ module PaymentDemo
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
-
+    # config_file = Rails.application.config_for(:application)
+    # config_file.each do |key,value|
+    #   ENV[key] = value
+    # end unless config_file.nil?
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
