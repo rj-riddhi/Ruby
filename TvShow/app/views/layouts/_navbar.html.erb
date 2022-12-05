@@ -13,7 +13,7 @@
     <ul class="navbar-nav">
       <% if user_signed_in? %>
         <li class="nav-item active">
-          <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+          <%= link_to 'Sign out', destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: 'nav-link' %>
         </li>
       <% else %>
         <li class="nav-item active">

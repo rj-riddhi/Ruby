@@ -1,0 +1,6 @@
+development:
+	  # gmail_email: "testpractical.team5@yopmail.com"
+	  # gmail_password: "Practical@123!!#"
+    MAILTRAP_API_KEY: '0005a3c1e4fce4f9e82ac16441a5b82e'
+    gmail_email: '7a9d37225e19e4'
+    gmail_password: '957dab2426ebaa'

@@ -17,6 +17,11 @@ gem 'bootstrap', '~> 4.5.0'
 gem 'jquery-rails'
 gem 'devise'
 gem 'acts_as_favoritor'
+gem 'whenever', require: false
+gem 'mailtrap'
+gem 'activeadmin'
+gem 'inherited_resources'
+gem "sassc-rails"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 

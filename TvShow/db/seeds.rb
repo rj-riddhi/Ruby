@@ -15,3 +15,4 @@
 		channel4.shows.create(name: 'Talk with Dhoni', start_time: '15:00', end_time: '16:00')
 		channel4.shows.create(name: 'World Cup Highlights', start_time: '16:00', end_time: '17:00')
 		channel4.shows.create(name: 'IPL Strategy', start_time: '17:00', end_time: '18:00')
+		AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

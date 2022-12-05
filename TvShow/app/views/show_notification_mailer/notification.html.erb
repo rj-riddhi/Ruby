@@ -1,0 +1,14 @@
+<h1>Tv Show Reminder</h1>
+
+<p>
+Hello <%= @user.name %>,<br/>
+Your favorite show is about to begin in 30 mins. Please find the details below:<br/>
+Channel Name: <%= @show&.channel&.name %><br/>
+Show Name: <%= @show.name %><br/>
+Show Timing: <%= @show.start_time.strftime("%I:%M %p") %><br/>
+</p>
+
+<p>
+Thanks,<br/>
+FavShow
+</p> 
