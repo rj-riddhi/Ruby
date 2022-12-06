@@ -11,6 +11,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
 	    end
 	  end
 
+	# DELETE /resource
+	  def destroy
+		puts "called"
+	  end  
+
 	  private
 
 	  def user_params
