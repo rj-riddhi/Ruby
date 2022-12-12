@@ -4,26 +4,26 @@ class CartsController < InheritedResources::Base
   before_action :set_cart, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
   layout 'index', only: [:index, :show]
-  # GET /user_lists or /user_lists.json
+  # GET /carts 
   def index
     @cart = Cart.all
     return @cart
 end
 
-  # GET /user_lists/1 or /user_lists/1.json
+  # GET /carts/1
   def show
   end
 
-  # GET /user_lists/new
+  # GET /carts/new
   def new
     @cart =Cart.new
   end
 
-  # GET /user_lists/1/edit
+  # GET /carts/1/edit
   def edit
   end
 
-  # POST /user_lists or /user_lists.json
+  # POST /carts
   def create
     @cart = Cart.new(cart_params)
 
@@ -38,7 +38,7 @@ end
     end
   end
 
-  # PATCH/PUT /user_lists/1 or /user_lists/1.json
+  # PATCH/PUT /carts/1 
   def update
     respond_to do |format|
       if @cart.update(cart_params)
@@ -60,7 +60,7 @@ end
     redirect_to @cart, notice: "Your Payment has been done successfully 🥳"
   end
 
-  # DELETE /user_lists/1 or /user_lists/1.json
+  # DELETE /carts/1
   def destroy
     @cart.destroy if @cart.id == session[:cart_id]
     session[:cart_id] = nil
@@ -71,13 +71,8 @@ end
     end
   end
 
-  # def correct_user
-  #   @friend = current_user.user_lists.find_by(id: params[:id])
-  #   redirect_to user_list_path, notice: "Not Autherized to edit this user" if @friend.nil?
-  # end
 
   private
-  #   # Use callbacks to share common setup or constraints between actions.
     def set_cart
       @cart = Cart.find(params[:id])
     end

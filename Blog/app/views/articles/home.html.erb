@@ -2,12 +2,12 @@
 
 <p>Our site has <%= Article.public_content %> Blogs</p>
 <ul>
-<% @articles.each do |article| %>
-<% unless article.archived? %>
-<li><%= link_to article.title, article %></li>
+    <% @articles.each do |article| %>
+    <% unless article.archived? %>
+    <li><%= link_to article.title, article %></li>
 
-<% end %>
-<% end %>
+    <% end %>
+    <% end %>
 </ul>
 
 <%# to create new article %>

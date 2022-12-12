@@ -12,16 +12,16 @@
   </thead>
 
   <tbody>
-  <%= @order_items %>
-    <% @order_items.each do |order_item| %>
-      <tr>
-        <td><%= order_item.product %></td>
-        <td><%= order_item.cart %></td>
-        <td><%= link_to 'Show', order_item %></td>
-        <td><%= link_to 'Edit', edit_order_item_path(order_item) %></td>
-        <td><%= link_to "Delete",  order_item, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} ,class:'btn  btn-outline-danger'%></td>
-      </tr>
-    <% end %>
+    <%= @order_items %>
+      <% @order_items.each do |order_item| %>
+        <tr>
+          <td><%= order_item.product %></td>
+          <td><%= order_item.cart %></td>
+          <td><%= link_to 'Show', order_item %></td>
+          <td><%= link_to 'Edit', edit_order_item_path(order_item) %></td>
+          <td><%= link_to "Delete",  order_item, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} ,class:'btn  btn-outline-danger'%></td>
+        </tr>
+      <% end %>
   </tbody>
 </table>
 

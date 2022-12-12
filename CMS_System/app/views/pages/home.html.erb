@@ -1,12 +1,12 @@
 <% if @cms_page %>
 <div class="container mt-5">
-<div class="card" style="width: 30rem;">
-  <div class="card-body">
-    <h5 class="card-title"><%= @cms_page.title %></h5>
-    <p class="card-text"><%= @cms_page.description %></p>
-    <%= link_to 'Go somewhere','/home', class: 'btn btn-secondary' %>
+  <div class="card" style="width: 30rem;">
+    <div class="card-body">
+      <h5 class="card-title"><%= @cms_page.title %></h5>
+      <p class="card-text"><%= @cms_page.description %></p>
+      <%= link_to 'Go somewhere','/home', class: 'btn btn-secondary' %>
+    </div>
   </div>
-</div>
 </div>
 <% else %>
 <h1>Welcome to the CMS System

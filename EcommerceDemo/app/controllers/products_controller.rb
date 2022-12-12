@@ -4,28 +4,27 @@ class ProductsController < InheritedResources::Base
 
   before_action :set_product, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, except: [:index, :show]
-  # before_action :correct_user, only: [:edit, :update, :destroy]
-  # GET /user_lists or /user_lists.json
+  # GET /products
   def index
     @products = Product.all
     return @products
 end
 
-  # GET /user_lists/1 or /user_lists/1.json
+  # GET /products/1
   def show
   end
 
-  # GET /user_lists/new
+  # GET /products/new
   def new
     @product = current_user.products.build
   end
 
-  # GET /user_lists/1/edit
+  # GET /products/1/edit
   def edit
     # @product = Product.find(params[:id])
   end
 
-  # POST /user_lists or /user_lists.json
+  # POST /products
   def create
     @product = current_user.products.build(product_params)
 
@@ -40,9 +39,8 @@ end
     end
   end
 
-  # PATCH/PUT /user_lists/1 or /user_lists/1.json
+  # PATCH/PUT /products/1
   def update
-    # @product = Product.find(params[:id])
     respond_to do |format|
       if @product.update(product_params)
         format.html { redirect_to products_url(@product), notice: "Product was successfully updated." }
@@ -54,7 +52,7 @@ end
     end
   end
 
-  # DELETE /user_lists/1 or /user_lists/1.json
+  # DELETE /products/1
   def destroy
     
     # @product = Product.find(params[:id])
@@ -67,13 +65,7 @@ end
     end
   end
 
-  # def correct_user
-  #   @friend = current_user.user_lists.find_by(id: params[:id])
-  #   redirect_to user_list_path, notice: "Not Autherized to edit this user" if @friend.nil?
-  # end
-
   private
-  #   # Use callbacks to share common setup or constraints between actions.
     def set_product
       @product = Product.find(params[:id])
     end

@@ -1,16 +1,16 @@
 
- <%  @products.each do |product| %>
- <%if(product.active?) %>
-<div class='cards'>
-        <div class = 'card  radius-15'>
-        <div class="d-flex justify-content-center card_img">
-            <%= link_to image_tag(product.avatar.thumb.url, :width => 110,:height => 110, :alt => 'thumbnails', :class => 'avatar avatar-xl rounded-circle box-shadow'), product_path(product.id)  %>
-        </div>
-        <div class = 'card_info  mt-4 '>
-                <h3 class = 'card_cat'> <%= product.name %> </h3>
-                <p class = 'card_title'> <%= product.description %> </p>
+<%  @products.each do |product| %>
+    <%if(product.active?) %>
+        <div class='cards'>
+            <div class = 'card  radius-15'>
+                <div class="d-flex justify-content-center card_img">
+                    <%= link_to image_tag(product.avatar.thumb.url, :width => 110,:height => 110, :alt => 'thumbnails', :class => 'avatar avatar-xl rounded-circle box-shadow'), product_path(product.id)  %>
+                </div>
+                <div class = 'card_info  mt-4 '>
+                    <h3 class = 'card_cat'> <%= product.name %> </h3>
+                    <p class = 'card_title'> <%= product.description %> </p>
+                </div>
             </div>
         </div>
-</div>
-<% end %>
+    <% end %>
 <% end %>

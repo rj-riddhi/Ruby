@@ -2,167 +2,167 @@
 <html>
   <head>
     <title>EcommerceDemo</title>
-  <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<style>
+    <style>
 
-body{
- background: #ddd;
-}
-
-
-.wrapper{
-
-    margin-top: 30px;
-}
-
-.card{
-
-    border:1px solid #eee;
-    cursor: pointer;
-}
-
-
-.weight{
-
-    margin-top: -65px; 
-    transition: all 0.5s;  
-}
-
-.weight small{
-
-    color: #e2dede;
-}
-
-.buttons {
-        padding: 10px;
-    background-color: #d6d4d44f;
-    border-radius: 4px;
-    position: relative;
-    margin-top: 7px;
-    opacity: 0;
-    transition: all 0.8s;
-}
-
-.dot {
-    height: 14px;
-    width: 14px;
-    background-color: green;
-    border-radius: 50%;
-    position: absolute;
-    left: 27%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 8px;
-    color: #fff;
-    opacity: 0;
-}
-
-.cart-button {
-    height: 48px
-}
-
-.cart-button:focus {
-    box-shadow: none
-}
-
-.cart {
-    position: relative;
-    height: 48px !important;
-    width: 50px;
-    margin-right: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
-    padding: 11px;
-    border-radius: 5px;
-    font-size: 14px;
-    transition: 1s ease-in-out;
-    overflow: hidden;
-
-}
-.price{
-  font-weight: bold;
-  font-size : 25px;
-}
-.cart-button.clicked span.dot {
-    animation: item 0.3s ease-in forwards
-}
-
-@keyframes item {
-    0% {
-        opacity: 1;
-        top: 30%;
-        left: 30%
+    body{
+    background: #ddd;
     }
 
-    25% {
-        opacity: 1;
-        left: 26%;
-        top: 0%
+
+    .wrapper{
+
+        margin-top: 30px;
     }
 
-    50% {
-        opacity: 1;
-        left: 23%;
-        top: -22%
+    .card{
+
+        border:1px solid #eee;
+        cursor: pointer;
     }
 
-    75% {
-        opacity: 1;
-        left: 19%;
-        top: -18%
+
+    .weight{
+
+        margin-top: -65px; 
+        transition: all 0.5s;  
     }
 
-    100% {
-        opacity: 1;
-        left: 14%;
-        top: 28%
+    .weight small{
+
+        color: #e2dede;
     }
-}
+
+    .buttons {
+            padding: 10px;
+        background-color: #d6d4d44f;
+        border-radius: 4px;
+        position: relative;
+        margin-top: 7px;
+        opacity: 0;
+        transition: all 0.8s;
+    }
+
+    .dot {
+        height: 14px;
+        width: 14px;
+        background-color: green;
+        border-radius: 50%;
+        position: absolute;
+        left: 27%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 8px;
+        color: #fff;
+        opacity: 0;
+    }
+
+    .cart-button {
+        height: 48px
+    }
+
+    .cart-button:focus {
+        box-shadow: none
+    }
+
+    .cart {
+        position: relative;
+        height: 48px !important;
+        width: 50px;
+        margin-right: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        padding: 11px;
+        border-radius: 5px;
+        font-size: 14px;
+        transition: 1s ease-in-out;
+        overflow: hidden;
+
+    }
+    .price{
+    font-weight: bold;
+    font-size : 25px;
+    }
+    .cart-button.clicked span.dot {
+        animation: item 0.3s ease-in forwards
+    }
+
+    @keyframes item {
+        0% {
+            opacity: 1;
+            top: 30%;
+            left: 30%
+        }
+
+        25% {
+            opacity: 1;
+            left: 26%;
+            top: 0%
+        }
+
+        50% {
+            opacity: 1;
+            left: 23%;
+            top: -22%
+        }
+
+        75% {
+            opacity: 1;
+            left: 19%;
+            top: -18%
+        }
+
+        100% {
+            opacity: 1;
+            left: 14%;
+            top: 28%
+        }
+    }
 
 
 
-.card:hover .buttons{
+    .card:hover .buttons{
 
-    opacity: 1;
-}
+        opacity: 1;
+    }
 
 
-.card:hover .weight{
+    .card:hover .weight{
 
-     margin-top: 10px;
-}
+        margin-top: 10px;
+    }
 
-.card:hover{
+    .card:hover{
 
-    transform: scale(1.04);
-    z-index: 2;
-    overflow: hidden;
-}
+        transform: scale(1.04);
+        z-index: 2;
+        overflow: hidden;
+    }
 
-</style>
+    </style>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-<%= render '/home/header' %>
+    <%= render '/home/header' %>
 
-<div class="container">
-<br />
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-    <%= yield %>
-</div>
+    <div class="container">
+        <br />
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <%= yield %>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
   </body>
 </html>
